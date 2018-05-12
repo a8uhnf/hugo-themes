@@ -1,0 +1,31 @@
+baseurl = "https://a8uhnf.github.io/"
+title = "Abu Hanifa"
+theme = "nix"
+languageCode = "en-us"
+disqusShortname = "your_disqus_shortname"
+publishDir = "public"
+
+[menu]
+  [[menu.header]]
+    name = "post"
+    weight = 0
+    url = "/post"
+  [[menu.header]]
+    name = "about"
+    weight = 1
+    url = "/about"
+
+[params]
+  GithubID = "a8uhnf"
+  TwitterID = "a8uhnf"
+  LinkedInID = "abuhanifa"
+  #GoogleplusID = "your_googleplus"
+  FacebookID = "abuhnf"
+  #TelegramID = "your_telegram"
+  Name = "Abu Hanifa"
+  HeaderUsername = "a8uhnf"
+  HeaderHostname = "Abu Hanifa"
+  Email = "a8u.han1fa@gmail.com"
+  About = "Hello, I'm Abu Hanifa. A software engineer, family man, sports fan, competitive programmer, technology enthusiasist, occasional traveller, kubernetes lover. Alwasys like to learn new things: as language, could be programming or spoken. Enjoy :) ..."
+  ProfilePicture = "/img/avatar.jpg"
+  SlackURL = "your_slack_invite_url"
