@@ -1,22 +1,20 @@
 +++
-title = "About Hugo"
+title = "About Me"
 date = "2014-04-09"
 menu = "main"
 +++
 
-Hugo is a static site engine written in Go.
+I'm a software engineer. Works in various open source project. Mostly I wark in golang, php. I'm in love with golang, kubernetes, microservice.  
 
 
-It makes use of a variety of open source projects including:
+I works in various open source projects including:
 
-* [Cobra](https://github.com/spf13/cobra)
-* [Viper](https://github.com/spf13/viper)
-* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
-* [Cast](https://github.com/spf13/cast)
+* [Kubed](https://github.com/appscode/kubed)
+* [Viper](https://github.com/kubepack/pack)
 
-Learn more and contribute on [GitHub](https://github.com/spf13).
+Learn more about me [GitHub](https://github.com/a8uhnf).
 
-## Setup
+<!-- ## Setup
 
 Some fun facts about [Hugo](http://gohugo.io/):
 
@@ -28,3 +26,4 @@ Some fun facts about [Hugo](http://gohugo.io/):
 Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/spf13/hugo/issues/new) or [ask me on Twitter](https://twitter.com/spf13).
 
 Thanks for reading!
+ -->
