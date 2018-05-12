@@ -10,7 +10,7 @@ I'm a software engineer. Works in various open source project. Mostly I wark in 
 I works in various open source projects including:
 
 * [Kubed](https://github.com/appscode/kubed)
-* [Viper](https://github.com/kubepack/pack)
+* [Pack](https://github.com/kubepack/pack)
 
 Learn more about me [GitHub](https://github.com/a8uhnf).
 
