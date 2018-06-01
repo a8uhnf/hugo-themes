@@ -12,56 +12,29 @@
     
     
     <item>
-      <title>Development</title>
-      <link>https://a8uhnf.github.io/tags/development/</link>
+      <title>Authorization</title>
+      <link>https://a8uhnf.github.io/tags/authorization/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://a8uhnf.github.io/tags/development/</guid>
+      <guid>https://a8uhnf.github.io/tags/authorization/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Go</title>
-      <link>https://a8uhnf.github.io/tags/go/</link>
+      <title>Kubernetes</title>
+      <link>https://a8uhnf.github.io/tags/kubernetes/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://a8uhnf.github.io/tags/go/</guid>
+      <guid>https://a8uhnf.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Golang</title>
-      <link>https://a8uhnf.github.io/tags/golang/</link>
+      <title>Rbac</title>
+      <link>https://a8uhnf.github.io/tags/rbac/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://a8uhnf.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://a8uhnf.github.io/tags/hugo/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://a8uhnf.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Templates</title>
-      <link>https://a8uhnf.github.io/tags/templates/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://a8uhnf.github.io/tags/templates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Themes</title>
-      <link>https://a8uhnf.github.io/tags/themes/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://a8uhnf.github.io/tags/themes/</guid>
+      <guid>https://a8uhnf.github.io/tags/rbac/</guid>
       <description></description>
     </item>
     

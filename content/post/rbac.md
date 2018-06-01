@@ -1,12 +1,10 @@
 +++
-title = "(Hu)go Template Primer"
+title = "RBAC made easy"
 description = ""
 tags = [
-    "go",
-    "golang",
-    "templates",
-    "themes",
-    "development",
+    "kubernetes",
+    "rbac",
+    "authorization",
 ]
 date = "2014-04-02"
 categories = [
