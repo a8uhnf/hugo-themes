@@ -10,6 +10,7 @@ date = "2018-07-20"
 categories = [
     "Development",
     "golang",
+    "kubernetes",
 ]
 menu = "main"
 +++
