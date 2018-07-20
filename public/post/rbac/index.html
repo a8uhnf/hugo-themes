@@ -72,76 +72,7 @@
             <h1><a href="https://a8uhnf.github.io/post/rbac/">RBAC made easy</a></h1>
             <span class="post-date">Jul 20, 2018 </span>
             <div class="post-content">
-                
-
-<h1 id="rbac-tutorial">rbac-tutorial</h1>
-
-<h2 id="adding-users">Adding Users</h2>
-
-<p>The genrsa command generates an RSA private key.</p>
-
-<pre><code>openssl genrsa -out hanifa-test.pem 2048
-
-openssl req -new -key hanifa-test.pem -out hanifa-test.csr -subj &quot;/CN=hanifa-test&quot;
-
-</code></pre>
-
-<h3 id="certificate-signing-request-with-k8s">Certificate Signing Request with K8s</h3>
-
-<pre><code class="language-yaml">apiVersion: certificates.k8s.io/v1beta1
-kind: CertificateSigningRequest
-metadata:
-  name: user-request-hanifa-test
-spec:
-  groups:
-  - system:authenticated
-  request: &lt;CSR&gt;
-  usages:
-  - digital signature
-  - key encipherment
-  - client auth
-</code></pre>
-
-<p>Use below command to encrypt csr into one line.</p>
-
-<pre><code>cat hanifa-test.csr | base64 | tr -d '\n'
-</code></pre>
-
-<pre><code>kubectl certificate approve user-request-hanifa-test
-</code></pre>
-
-<pre><code>kubectl get csr user-request-hanifa-test -o jsonpath='{.status.certificate}' | base64 --decode &gt; hanifa-test.crt
-</code></pre>
-
-<h3 id="entry-to-config-file">Entry to Config file</h3>
-
-<pre><code>kubectl config set-cluster hanifa-test --insecure-skip-tls-verify=true --server=&lt;server-ip&gt;
-
-
-kubectl config set-credentials hanifa-test --client-certificate=hanifa-test.crt --client-key=hanifa-test.pem --embed-certs=true
-
-kubectl config set-context hanifa-test --cluster=hanifa-test --user=hanifa-test
-
-kubectl config use-context hanifa-test
-
-</code></pre>
-
-<p>Create ClusterRoleBinding with default <code>view</code> ClusterRole</p>
-
-<pre><code class="language-yaml">
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
-metadata:
-  name: hanifa-test-view-all
-subjects:
-- kind: User
-  name: hanifa-test
-  apiGroup: rbac.authorization.k8s.io
-roleRef:
-  kind: ClusterRole
-  name: view
-  apiGroup: rbac.authorization.k8s.io
-</code></pre>
+                <p>Different ways to use rbac. How to limit the scope of a user in kubernetes namespace or give the user the whole cluster scope.</p>
 
             </div>
             

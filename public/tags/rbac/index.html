@@ -82,9 +82,7 @@
 							<h4 class="post-link"><a href="https://a8uhnf.github.io/post/rbac/">RBAC made easy</a></h4>
 							<h4 class="post-date">Jul 20, 2018</h4>
 						</div>
-						<div class="post-summary"><p>rbac-tutorial Adding Users The genrsa command generates an RSA private key.
-openssl genrsa -out hanifa-test.pem 2048 openssl req -new -key hanifa-test.pem -out hanifa-test.csr -subj &quot;/CN=hanifa-test&quot;  Certificate Signing Request with K8s apiVersion: certificates.k8s.io/v1beta1 kind: CertificateSigningRequest metadata: name: user-request-hanifa-test spec: groups: - system:authenticated request: &lt;CSR&gt; usages: - digital signature - key encipherment - client auth  Use below command to encrypt csr into one line.
-cat hanifa-test.csr | base64 | tr -d '\n'  kubectl certificate approve user-request-hanifa-test  kubectl get csr user-request-hanifa-test -o jsonpath='{.</p></div>
+						<div class="post-summary"><p>Different ways to use rbac. How to limit the scope of a user in kubernetes namespace or give the user the whole cluster scope.</p></div>
 						<div class="post-list-footer text-center">
 							<a href="https://a8uhnf.github.io/post/rbac/">Read More</a>
 						</div>
