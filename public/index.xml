@@ -17,7 +17,8 @@
       <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://a8uhnf.github.io/post/rbac/</guid>
-      <description>Different ways to use rbac. How to limit the scope of a user in kubernetes namespace or give the user the whole cluster scope.</description>
+      <description>Different ways to use rbac. How to limit the scope of a user in kubernetes namespace or give the user the whole cluster scope.
+Prerequisite  [openssl]() [kubectl]() Have admin permission to create rbac role  Create Specific Namespace Scoped Role  First, needs to generate private key  openssl genrsa -out &amp;lt;name&amp;gt;.pem 2048   Second, generate certificate signing request(.csr)  openssl req -new -key &amp;lt;name&amp;gt;.pem -out &amp;lt;name&amp;gt;.csr -subj &amp;quot;/CN=&amp;lt;name&amp;gt;&amp;quot;   Now, needs to file a signing request to kubernetes CA.</description>
     </item>
     
     <item>

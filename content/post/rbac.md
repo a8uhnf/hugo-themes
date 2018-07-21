@@ -30,7 +30,6 @@ Different ways to use rbac. How to limit the scope of a user in kubernetes names
 ```
 openssl genrsa -out <name>.pem 2048
 ```
-
 2. Second, generate certificate signing request(.csr)
 
 ```

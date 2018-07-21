@@ -72,7 +72,90 @@
             <h1><a href="https://a8uhnf.github.io/post/rbac/">RBAC made easy</a></h1>
             <span class="post-date">Jul 20, 2018 </span>
             <div class="post-content">
-                <p>Different ways to use rbac. How to limit the scope of a user in kubernetes namespace or give the user the whole cluster scope.</p>
+                
+
+<p>Different ways to use rbac. How to limit the scope of a user in kubernetes namespace or give the user the whole cluster scope.</p>
+
+<h1 id="prerequisite">Prerequisite</h1>
+
+<ul>
+<li>[openssl]()</li>
+<li>[kubectl]()</li>
+<li>Have admin permission to create rbac role</li>
+</ul>
+
+<h1 id="create-specific-namespace-scoped-role">Create Specific Namespace Scoped Role</h1>
+
+<ol>
+<li>First, needs to generate private key</li>
+</ol>
+
+<pre><code>openssl genrsa -out &lt;name&gt;.pem 2048
+</code></pre>
+
+<ol>
+<li>Second, generate certificate signing request(.csr)</li>
+</ol>
+
+<pre><code>openssl req -new -key &lt;name&gt;.pem -out &lt;name&gt;.csr -subj &quot;/CN=&lt;name&gt;&quot;
+</code></pre>
+
+<ol>
+<li>Now, needs to file a signing request to kubernetes CA. So that kubernetes CA can sign this request.</li>
+</ol>
+
+<pre><code>apiVersion: certificates.k8s.io/v1beta1
+kind: CertificateSigningRequest
+metadata:
+  name: user-request
+spec:
+  groups:
+  - system:authenticated
+  request: &lt;this field's value is base64 encoded the .csr file, which we generated previously.&gt;
+  usages:
+  - digital signature
+  - key encipherment
+  - client auth
+
+</code></pre>
+
+<ol>
+<li>Now, create the <code>CertificateSigningRequest</code> by</li>
+</ol>
+
+<pre><code class="language-console">kubectl apply -f &lt;file-name of CertificateSigningRequest&gt;
+</code></pre>
+
+<ol>
+<li>Now, time to approve <code>CertificateSigningRequest</code>, which we created in previous step.</li>
+</ol>
+
+<pre><code>kubectl certificate approve user-request
+</code></pre>
+
+<p>this command signed the certificate.</p>
+
+<ol>
+<li>Now, download the signed certificate and save it in some file.</li>
+</ol>
+
+<pre><code>kubectl get csr user-request -o jsonpath='{.status.certificate}' | base64 -d &gt; &lt;name&gt;.crt
+
+</code></pre>
+
+<ol>
+<li>Now, set config context</li>
+</ol>
+
+<pre><code>kubectl config set-cluster &lt;name&gt; --insecure-skip-tls-verify=true --server=&lt;server-url&gt;
+kubectl config set-credentials &lt;name&gt; --client-certificate=&lt;name&gt;.crt --client-key=&lt;name&gt;.pem --embed-certs=true
+kubectl config set-context &lt;name&gt; --cluster=&lt;name&gt; --user=&lt;name&gt;
+kubectl config use-context &lt;nmae&gt;
+</code></pre>
+
+<ol>
+<li>Now, create cluterrole/role and cluterrolebinding/rolebinding.</li>
+</ol>
 
             </div>
             
