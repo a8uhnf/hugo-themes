@@ -1,5 +1,5 @@
 +++
-title = "RBAC made easy"
+title = "RBAC usage"
 description = ""
 tags = [
     "kubernetes",
